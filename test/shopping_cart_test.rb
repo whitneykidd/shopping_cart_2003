@@ -56,4 +56,11 @@ class ShoppingCartTest < Minitest::Test
   def test_returns_cart_details
     assert_equal ({:name=> "King Soopers", :capacity=> 30}), @cart.details
   end
+
+  def test_returns_percent_occupied
+    @cart.add_product(@product1)
+    @cart.add_product(@product2)
+    @cart.add_product(@product3)
+    assert_equal 43.33, @cart.percentage_occupied
+  end
 end
