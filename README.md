@@ -123,7 +123,7 @@ pry(main)> cart.products_by_category(:paper)
 #=> [#<Product:0x00007fccd29b5720...>, #<Product:0x00007fccd2985f51...>]
 
 pry(main)> cart.details
-#=> {name: "King Soopers", capacity: 30}
+#=> {:name=> "King Soopers", :capacity=> 30}
 ```
 
 ## Iteration 4
