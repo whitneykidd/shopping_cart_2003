@@ -30,12 +30,12 @@ RSpec.describe 'Shopping Cart Spec Harness' do
       expect(@product.unit_price).to eq(3.70)
 
       expect(@product).to respond_to(:quantity).with(0).argument
-      expect(@product.quantity).to eq('10')
+      expect(@product.quantity).to eq(10)
     end
 
     it '2. Product #total_price' do
       expect(@product).to respond_to(:total_price).with(0).argument
-      expect(@product.area).to eq(37.0)
+      expect(@product.total_price).to eq(37.0)
     end
 
     it '3. Product #is_hoarded?' do
@@ -65,9 +65,9 @@ RSpec.describe 'Shopping Cart Spec Harness' do
       expect(@cart.name).to eq("King Soopers")
     end
 
-    it '6. ShoppingCart #quantity' do
-      expect(@cart).to respond_to(:quantity).with(0).argument
-      expect(@cart.quantity).to eq(30)
+    it '6. ShoppingCart #capacity' do
+      expect(@cart).to respond_to(:capacity).with(0).argument
+      expect(@cart.capacity).to eq(30)
     end
 
     it '7. ShoppingCart #add_product' do
@@ -137,11 +137,11 @@ RSpec.describe 'Shopping Cart Spec Harness' do
     end
 
     it '13. ShoppingCart #products_sorted_by_quantity' do
-      expect(@cart).to respond_to(:products_sorted_by_quantity).with(0).argument
+      expect(@cart).to respond_to(:sorted_products_by_quantity).with(0).argument
 
       @cart.add_product(@product4)
 
-      expect(@cart.products_sorted_by_quantity).to eq([@product4, @product1, @product2, @product3])
+      expect(@cart.sorted_products_by_quantity).to eq([@product4, @product1, @product2, @product3])
     end
 
     it '14. ShoppingCart #product_breakdown' do
