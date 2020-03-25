@@ -19,7 +19,7 @@ pry(main)> require './lib/product'
 
 pry(main)> product = Product.new(:paper, 'toilet paper', 3.70, '10')
 
-#=> #<Product:0x00007fa53b9ca0a8 @category=:paper, @name="toilet paper", @quantity='10', @unit_price=3.70>
+#=> #<Product:0x00007fa53b9ca0a8 @category=:paper, @name="toilet paper", @quantity=10, @unit_price=3.70>
 
 pry(main)> product.category
 #=> :paper
