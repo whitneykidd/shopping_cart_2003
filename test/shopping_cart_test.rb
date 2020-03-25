@@ -52,4 +52,8 @@ class ShoppingCartTest < Minitest::Test
     @cart.add_product(@product4)
     assert_equal [@product1, @product3], @cart.products_by_category(:paper)
   end
+
+  def test_returns_cart_details
+    assert_equal ({:name=> "King Soopers", :capacity=> 30}), @cart.details
+  end
 end

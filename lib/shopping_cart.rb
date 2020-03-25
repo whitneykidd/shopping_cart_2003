@@ -27,4 +27,8 @@ class ShoppingCart
     end
     products_in_category
   end
+
+  def details
+    cart_details = {:name => @name, :capacity => @capacity}
+  end
 end
