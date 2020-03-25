@@ -15,7 +15,7 @@ class ShoppingCart
   end
 
   def is_full?
-    @capacity <= total_number_of_products ? true : false
+    @capacity < total_number_of_products ? true : false
   end
 
   def products_by_category(category)
@@ -34,5 +34,9 @@ class ShoppingCart
 
   def percentage_occupied
     (( total_number_of_products.to_f / @capacity.to_f ) * 100).round(2)
+  end
+
+  def sorted_products_by_quantity
+
   end
 end
