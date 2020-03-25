@@ -9,6 +9,7 @@ class ShoppingCartTest < Minitest::Test
     @product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
     @product2 = Product.new(:meat, 'chicken', 4.50, '2')
     @product3 = Product.new(:paper, 'tissue paper', 1.25, '1')
+    @product4 = Product.new(:produce, 'apples', 0.99, '20')
   end
 
   def test_it_exists
@@ -32,5 +33,15 @@ class ShoppingCartTest < Minitest::Test
     @cart.add_product(@product2)
     @cart.add_product(@product3)
     assert_equal 13, @cart.total_number_of_products
+  end
+
+  def test_returns_cart_is_full
+    @cart.add_product(@product1)
+    @cart.add_product(@product2)
+    @cart.add_product(@product3)
+    assert_equal false, @cart.is_full?
+
+    @cart.add_product(@product4)
+    assert_equal true, @cart.is_full?
   end
 end
