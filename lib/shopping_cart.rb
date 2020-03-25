@@ -15,7 +15,7 @@ class ShoppingCart
   end
 
   def is_full?
-    @capacity <= total_number_of_products ? true : false
+    @capacity < total_number_of_products ? true : false
   end
 
   def products_by_category(category)
@@ -37,7 +37,7 @@ class ShoppingCart
   end
 
   def sorted_products_by_quantity
-    (@products.sort_by { |product| product.quantity }).reverse
+    ( @products.sort_by { |product| product.quantity }).reverse
   end
 
   def breakdown
@@ -46,7 +46,7 @@ class ShoppingCart
       if product_breakdown.keys.include?(product.category)
         product_breakdown[product.category] << product
       else
-      product_breakdown[product.category] = [product]
+        product_breakdown[product.category] = [product]
       end
     end
     product_breakdown
