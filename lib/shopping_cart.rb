@@ -15,7 +15,7 @@ class ShoppingCart
   end
 
   def is_full?
-    @capacity < total_number_of_products ? true : false
+    @capacity <= total_number_of_products ? true : false
   end
 
   def products_by_category(category)
@@ -37,6 +37,6 @@ class ShoppingCart
   end
 
   def sorted_products_by_quantity
-
+    (@products.sort_by { |product| product.quantity }).reverse
   end
 end
